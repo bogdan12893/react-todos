@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export class AddNewTask extends React.Component {
     constructor(){
@@ -17,7 +18,9 @@ export class AddNewTask extends React.Component {
     render() {
         return(
             <form onSubmit = {this.justSubmitted}>
-                <input type="text"/>
+                <FormGroup>
+                    <Input type="text" name="text" id="text" placeholder="enter ToDo's" />
+                </FormGroup>
             </form>
         );
     }

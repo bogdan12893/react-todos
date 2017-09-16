@@ -1,7 +1,9 @@
 import React from 'react';
+import { ListGroup, ListGroupItem, Button } from 'reactstrap';
+import './style.css';
 
 export class ToDoAppList extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.remove = this.remove.bind(this);
     }
@@ -12,11 +14,11 @@ export class ToDoAppList extends React.Component {
     }
 
     render() {
-        var items = this.props.tasks.map((elem, i)=>{
-            return <li key={i}><span>{elem}</span><button onClick={this.remove}>X</button></li>
+        var items = this.props.tasks.map((elem, i) => {
+            return <ListGroupItem key={i}><span>{elem}</span><Button className='delete-task' outline color="danger" size="sm" onClick={this.remove}>Delete</Button></ListGroupItem>
         });
 
-        return(
+        return (
             <ul>
                 {items}
             </ul>
